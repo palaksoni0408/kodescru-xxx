@@ -42,7 +42,7 @@ KodesCRUxxx is an AI-powered coding assistant designed to help students and deve
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/kodescru-xxx.git
+git clone https://github.com/palaksoni0408/kodescru-xxx.git
 cd kodescru-xxx
 ```
 
