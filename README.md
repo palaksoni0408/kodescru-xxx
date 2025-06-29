@@ -93,8 +93,8 @@ streamlit run app.py
 - Contributions are welcome! Please fork the repo, create a feature branch, and submit a pull request.
 
 ## Contact
-- **Email:** your.email@example.com
-- **GitHub:** [https://github.com/yourusername/kodescru-xxx](https://github.com/yourusername/kodescru-xxx)
+- **Email:** oyster958@gmail.com
+- **GitHub:** [https://github.com/palaksoni0408/kodescru-xxx](https://github.com/palaksoni0408/kodescru-xxx)
 
 ## Future Enhancements
 - Real-time collaborative editing
