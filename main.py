@@ -45,18 +45,18 @@ def convert_logic(req: RequestModel):
 def analyze(req: RequestModel):
     return {"response": analyze_complexity(req.code)}
 
-@app.post("/trace_code")
-def trace(req: RequestModel):
-    return {"response": trace_code(req.code, req.language)}
-
 @app.post("/get_snippets")
-def snippets(req: RequestModel):
-    return {"response": get_snippets(req.language, req.snippet_name)}
+def get_snippets_endpoint(req: RequestModel):
+    return {"response": get_snippets(req.language, req.snippet)}
 
 @app.post("/get_projects")
-def projects(req: RequestModel):
+def get_projects_endpoint(req: RequestModel):
     return {"response": get_projects(req.level, req.topic)}
 
 @app.post("/get_roadmaps")
-def roadmaps(req: RequestModel):
+def get_roadmaps_endpoint(req: RequestModel):
     return {"response": get_roadmaps(req.level, req.topic)}
+
+@app.post("/trace_code")
+def trace_code_endpoint(req: RequestModel):
+    return {"response": trace_code(req.code, req.language)}
