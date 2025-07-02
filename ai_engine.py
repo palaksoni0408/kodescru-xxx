@@ -47,26 +47,37 @@ def analyze_complexity(code):
     chain = prompt | llm
     return chain.invoke({"code": code})
 
-def trace_code(code, language):
-    # Placeholder: Implement real code tracing or use an API
-    return "Step-by-step code trace is under development."
+def get_snippets(language, topic):
+    # Generate 50 snippets related to the topic
+    prompt = ChatPromptTemplate.from_template(
+        "Generate {count} useful code snippets in {language} related to {topic}. "
+        "Provide each snippet with a brief description."
+    )
+    chain = prompt | llm
+    response = chain.invoke({"count": 50, "language": language, "topic": topic})
+    return response
 
-def get_snippets(language, snippet_name):
-    # Placeholder: Fetch snippets from a database or static data
-    snippets_db = {
-        "Python": {
-            "Hello World": "print('Hello, World!')",
-            "Factorial": "def factorial(n): return 1 if n==0 else n*factorial(n-1)"
-        },
-        "JavaScript": {
-            "Alert": "alert('Hello!');",
-            "Fetch": "fetch('https://api.example.com')"
-        }
-    }
-    return snippets_db.get(language, {}).get(snippet_name, "Snippet not found.")
 
 def get_projects(level, topic):
-    return f"Build a {topic} app suitable for {level} level learners."
+    prompt = ChatPromptTemplate.from_template(
+        "Generate a list of 10 innovative project ideas related to {topic} suitable for {level} learners. "
+        "Provide a brief description for each."
+    )
+    chain = prompt | llm
+    return chain.invoke({"topic": topic, "level": level})
 
 def get_roadmaps(level, topic):
-    return f"Roadmap for {topic} at {level} level:\n1. Basics\n2. Intermediate\n3. Advanced"
+    prompt = ChatPromptTemplate.from_template(
+        "Create a detailed learning roadmap for {topic} tailored for {level} learners. "
+        "Include key topics and suggested resources for each stage."
+    )
+    chain = prompt | llm
+    return chain.invoke({"topic": topic, "level": level})
+
+def trace_code(code, language):
+    prompt = ChatPromptTemplate.from_template(
+        "Analyze the following {language} code and provide a step-by-step explanation of its execution flow, "
+        "highlighting key variables and decision points:\n\n{code}"
+    )
+    chain = prompt | llm
+    return chain.invoke({"code": code, "language": language})
