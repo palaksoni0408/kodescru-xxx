@@ -106,4 +106,4 @@ streamlit run app.py
 ## 🎥 Demo Video
 
 [▶ Watch Demo on YouTube]
-( https://youtu.be/-gJqsESyilg )
+( https://youtu.be/ifA6zMZTlxw?si=Drt2FxHvYc5H4Tmm )
